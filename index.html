@@ -49,7 +49,7 @@ button,input,select{font:inherit}button{cursor:pointer}a{color:var(--olive)}
 @media(max-width:720px){.topbar{padding:12px 14px}.topbar nav{gap:11px}.book{margin:0}.cover{margin:10px;min-height:380px;padding:46px 18px}.page{padding:31px 16px}.spread{grid-template-columns:1fr}.spread:after{display:none}.leftpage,.rightpage{padding:20px}.leftpage{border-right:0;border-bottom:1px solid #bfad8e}.section-head h2{font-size:30px}.volume-title{margin-top:28px}.pic-frame{float:none;margin:0 auto 22px;width:50%;max-width:190px}}
 @media(prefers-reduced-motion:no-preference){.clipping{transition:transform .2s}.clipping:hover{transform:rotate(0deg) translateY(-2px)}}
 
-/* Original magazine preview, provided by Google Books rather than copied into this repository. */
+/* Approved source page scans can be mounted directly within the scrapbook. */
 .source-fallback{padding:15px 12px;text-align:center;border:1px dashed #b8a27e;background:#faf1dd;margin:9px 0;font:12px/1.6 Georgia,serif}.source-fallback img{max-height:180px;max-width:100%;object-fit:contain;display:block;margin:0 auto 12px;filter:sepia(.25)}.source-fallback a{display:inline-block;margin-top:8px;background:#5b6349;color:#fff6e5;padding:10px 12px;text-decoration:none;font:12px "Courier New",monospace}.source-viewer[hidden]{display:none}
 .original-preview{position:relative;border:1px solid #ab9471;background:#e7dcc6;padding:10px;margin:17px 0 10px;box-shadow:2px 4px 8px #38281826;transform:rotate(.5deg)}
 .original-preview h5{font:700 11px 'Courier New',monospace;text-transform:uppercase;letter-spacing:.09em;margin:3px 0 9px;color:#644f36}
@@ -58,7 +58,15 @@ button,input,select{font:inherit}button{cursor:pointer}a{color:var(--olive)}
 .source-status.is-error{color:#984a3c}
 .source-caption{font:10px/1.6 'Courier New',monospace;margin-top:9px;color:#5c5143}
 @media(max-width:720px){.source-viewer{height:360px}}
-</style><script src="https://www.google.com/books/jsapi.js" defer></script></head>
+
+.scan-gallery{display:grid;grid-template-columns:1fr;gap:19px;margin-top:10px}
+.scanned-page{margin:0;background:#faf7f0;padding:8px;box-shadow:2px 4px 9px #493c2b44;border:1px solid #beb19a;transform:rotate(-.3deg)}
+.scanned-page:nth-child(even){transform:rotate(.5deg)}
+.scanned-page img{display:block;width:100%;height:auto;max-height:900px;object-fit:contain;cursor:zoom-in}
+.scanned-page figcaption{font:10px/1.4 'Courier New',monospace;text-align:center;color:#61513e;margin:7px 0 3px;letter-spacing:.07em}
+.scanned-page img:focus{outline:2px solid #5b6349}
+.original-approved{background:#e8d9b7}
+</style></head>
 <body><a class="skip" href="#archive">Skip to collection</a>
 <div class="topbar"><span>JULIO PAEZ · PERSONAL WORKSHOP ARCHIVE</span><nav><a href="#archive">THE VOLUMES</a><a href="#julio">ABOUT JULIO</a></nav></div>
 <main class="book">
@@ -67,7 +75,7 @@ button,input,select{font:inherit}button{cursor:pointer}a{color:var(--olive)}
 <p class="intro">Grandpa Julio used to cut pages out of Popular Mechanics and bind his favorites into books. These are newly curated historical references inspired by that tradition, not claims about which individual pages were in his lost books.</p>
 <div class="index-controls"><label for="q">FIND A CLIPPING</label><input id="q" type="search" placeholder="Workbench, table, jig, guitar…"><label for="decade">VOLUME</label><select id="decade"><option value="all">All decades</option><option value="1960">Late 1960s</option><option value="1970">1970s</option><option value="1980">1980s</option></select><label for="category">SECTION</label><select id="category"><option value="all">All projects</option><option>Woodworking</option><option>Workshop</option><option>Mechanisms</option><option>Remarkable DIY</option></select></div>
 <div id="entries" aria-live="polite"><div class="empty">Opening the collection…</div></div>
-<p class="legal">ARCHIVE POLICY · The on-page magazine viewer is supplied by the official Google Books Embedded Viewer API when Google permits preview. No magazine page scans are copied or stored in this repository. The styled clipping around it is a new editorial recreation. Full independent image reproduction requires rights clearance. The source link remains available for the original article. Material specifications, drawings and original steps are not represented as verified unless examined.</p></section>
+<p class="legal">ARCHIVE POLICY · Original scanned article pages can display inline when the images have been added to this repository and reproduction rights documented. Without cleared scans, the site shows an issue-cover reference and a link to Google Books. Modern illustrations are recreations, not original article artwork. The source link remains available for the original article. Material specifications, drawings and original steps are not represented as verified unless examined.</p></section>
 <section class="page" id="julio"><div class="section-head"><div><div class="smallcap">The dedication page</div><h2>For Grandpa Julio</h2></div></div>
 <div class="bio"><figure class="pic-frame"><img src="assets/julio-paez.jpg" alt="Julio Paez, whose original scrapbook inspired the collection" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><div class="fallback" hidden>Family photograph<br>awaiting publication</div><figcaption>Julio Paez</figcaption></figure>
 <p>Julio Paez collected remarkable ideas the old-fashioned way: by cutting pages out of magazines, organizing them, and turning them into books of his own. Woodworking, homemade machines, clever furniture—projects worth keeping.</p><p>Those handmade books were lost. This collection is a tribute to his curiosity and the care he put into saving the ideas that interested him.</p><p style="font-style:italic;font-size:20px">May these pages feel a little like opening one of his books again.</p></div></section>
@@ -79,6 +87,20 @@ const projectIcon=cat=>cat==="Woodworking"?"wood":cat==="Workshop"?"bench":cat==
 const sketch=cat=>{const x=projectIcon(cat);if(x==="gear")return '<circle cx="130" cy="58" r="37"/><circle cx="130" cy="58" r="14"/><path d="M130 12v13m0 66v13M84 58h-13m118 0h-13M97 25l10 10m46 46 10 10m0-66-10 10M107 81l-10 10"/>';if(x==="wood")return '<path d="M28 78l98-40 108 36-102 41zM28 78v16l104 37v-16M132 115l102-41v16l-102 41M66 92v24m130-26v24"/><path d="M93 51v49m51-38v44M169 69v36"/>';if(x==="bench")return '<path d="M32 43h196v20H32zM50 63v63h17V63m126 0v63h17V63M67 106h126M72 43V27h116v16M88 27v-9h85v9"/>';return '<path d="M55 67l75-40 78 40-78 43zM75 73v41l55 31 55-31V73M130 110v35M105 38l51 61"/>';};
 const illus=cat=>'<svg viewBox="0 0 260 155" role="img" aria-label="Original illustration is not reproduced; decorative technical sketch"><g fill="none" stroke="#867661" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">'+sketch(cat)+'</g><g fill="none" stroke="#a89a85" stroke-width="1"><path stroke-dasharray="3 5" d="M15 135H245M130 3V145"/></g></svg>';
 let catalog=[];
+
+function sourcePanel(p,link,title,issue,pg){
+ const files=Array.isArray(p.sourceImages)?p.sourceImages.filter(f=>typeof f==="string"&&/^assets\/clippings\/[a-zA-Z0-9._/-]+\.(jpg|jpeg|png|webp)$/i.test(f)&&!f.includes("..")):[];
+ const rights=p.imageRights&&typeof p.imageRights==="object"?p.imageRights:{};
+ const approved=rights.status==="cleared"&&typeof rights.basis==="string"&&rights.basis.trim().length>0;
+ if(approved&&files.length){
+  const photos=files.map((src,i)=>'<figure class="scanned-page"><img loading="lazy" decoding="async" alt="Original article page '+(i+1)+' for '+title+'" src="'+esc(src)+'"><figcaption>ORIGINAL SCAN · '+issue+' · ARTICLE PAGE '+(i+1)+'</figcaption></figure>').join("");
+  const attr=rights.attribution?'<p class="source-caption">Scan credit: '+esc(rights.attribution)+'</p>':"";
+  return '<div class="original-preview original-approved"><h5>Original magazine cut-outs · '+files.length+' page(s)</h5><div class="scan-gallery">'+photos+'</div>'+attr+'<p class="source-caption">Reproduction basis: '+esc(rights.basis)+'</p></div>';
+ }
+ const issueId=new URL(link).searchParams.get("id")||"";
+ return '<div class="original-preview"><h5>Source issue · original page not yet mounted</h5><div class="source-fallback"><img loading="lazy" alt="Cover of the '+issue+' Popular Mechanics issue, not the original article page" src="https://books.google.com/books/content?id='+encodeURIComponent(issueId)+'&printsec=frontcover&img=1&zoom=1" onerror="this.style.display=\'none\'"><p><strong>Original cut-out pending.</strong> Add approved scans to the GitHub clippings folder and list them in this project’s catalog entry.</p><a href="'+link+'" target="_blank" rel="noopener noreferrer">View original article at Google Books ↗</a></div></div>';
+}
+
 function render(){
  const q=document.getElementById("q").value.trim().toLowerCase(),dec=document.getElementById("decade").value,cat=document.getElementById("category").value;
  const filtered=catalog.filter(p=>(dec==="all"||Math.floor(Number(p.year)/10)*10===Number(dec))&&(cat==="all"||p.category===cat)&&[p.title,p.summary,p.issue,p.category].join(" ").toLowerCase().includes(q));
@@ -90,80 +112,11 @@ function render(){
  if(last!==String(decade)){last=String(decade);const label=decade===1960?"Volume I":decade===1970?"Volume II":"Volume III";out+='<div class="volume-title">'+label+' <span>· The '+(decade===1960?"late ":"")+decade+'s</span></div>';}
  const title=esc(p.title),issue=esc(p.issue),summary=esc(p.summary),category=esc(p.category),pg=esc(p.page),link=(typeof p.url==="string"&&/^https:\/\/books\.google\.com\/books\?id=[A-Za-z0-9_-]+&pg=PA\d+$/.test(p.url))?p.url:"#";
  const suggestions=Array.isArray(p.improve)?p.improve:[];
- out+='<article class="spread" aria-label="'+title+'"><div class="leftpage"><div class="clipping"><div class="mag">POPULAR MECHANICS</div><div class="folio">'+issue.toUpperCase()+' · ORIGINAL ARTICLE INDEX · P. '+pg+'</div><h3>'+title+'</h3><div class="sketch">'+illus(category)+'</div><div class="original-preview"><h5>Original magazine · Google Books official preview</h5><div class="source-fallback" id="fallback-'+esc(p.id)+'"><img loading="lazy" alt="Cover thumbnail of the referenced Popular Mechanics issue; not the original article page" src="https://books.google.com/books/content?id='+encodeURIComponent((new URL(link)).searchParams.get("id")||"")+'&printsec=frontcover&img=1&zoom=1" onerror="this.style.display=\'none\'"><div><strong>Original article scan is not yet available inline.</strong><br>This is an issue-cover reference, not the project page.</div><a href="'+link+'" target="_blank" rel="noopener noreferrer">Read actual article at Google Books ↗</a></div><div class="source-viewer" id="viewer-'+esc(p.id)+'" data-book="'+esc(p.url)+'" data-page="'+pg+'" role="region" aria-label="Magazine preview for '+title+'"></div><p class="source-status" id="status-'+esc(p.id)+'">Issue reference shown below. Checking whether Google also permits an original-page preview…</p><div class="source-caption">Magazine pages are served directly by Google Books, subject to its preview rights and availability. Not stored or copied by this website.</div></div><p class="article-summary">'+summary+'</p><div class="archive-mark">EDITORIAL RECREATION · NOT THE ORIGINAL MAGAZINE SCAN</div></div><p class="legal">Source: '+issue+', starting p. '+pg+'. Actual drawings and full original construction instructions require inspection.</p><a class="orig-link" href="'+link+'" target="_blank" rel="noopener noreferrer">See original magazine page ↗</a></div><div class="rightpage"><div class="paper-label">Filed in '+category+' · '+esc(p.id)+'</div><div class="pencil">An idea worth saving.</div><h4>What made this worth clipping?</h4><p>'+summary+'</p><div class="notes"><strong>Modern engineering notes · OpenAI analysis</strong><ol>'+suggestions.map(v=>'<li>'+esc(v)+'</li>').join("")+'</ol></div><div class="stamp">Original plans need review</div><p class="legal">Proposals are conceptual, independently generated, and not original Popular Mechanics instructions. Any build requires engineering checks and appropriate modern machine, electrical and dust safety measures.</p></div></article>';
+ out+='<article class="spread" aria-label="'+title+'"><div class="leftpage"><div class="clipping"><div class="mag">POPULAR MECHANICS</div><div class="folio">'+issue.toUpperCase()+' · ORIGINAL ARTICLE INDEX · P. '+pg+'</div><h3>'+title+'</h3><div class="sketch">'+illus(category)+'</div>'+sourcePanel(p,link,title,issue,pg)+'<p class="article-summary">'+summary+'</p><div class="archive-mark">EDITORIAL RECREATION · NOT THE ORIGINAL MAGAZINE SCAN</div></div><p class="legal">Source: '+issue+', starting p. '+pg+'. Actual drawings and full original construction instructions require inspection.</p><a class="orig-link" href="'+link+'" target="_blank" rel="noopener noreferrer">See original magazine page ↗</a></div><div class="rightpage"><div class="paper-label">Filed in '+category+' · '+esc(p.id)+'</div><div class="pencil">An idea worth saving.</div><h4>What made this worth clipping?</h4><p>'+summary+'</p><div class="notes"><strong>Modern engineering notes · OpenAI analysis</strong><ol>'+suggestions.map(v=>'<li>'+esc(v)+'</li>').join("")+'</ol></div><div class="stamp">Original plans need review</div><p class="legal">Proposals are conceptual, independently generated, and not original Popular Mechanics instructions. Any build requires engineering checks and appropriate modern machine, electrical and dust safety measures.</p></div></article>';
  }
  container.innerHTML=out;
- startEmbeds();
 }
 
-let embedObserver=null,bookApiReady=false,bookApiRequested=false;
-const startedEmbeds=new Set();
-function setSourceStatus(id,message,isError=false){
- const status=document.getElementById("status-"+id);
- if(status){status.textContent=message;status.classList.toggle("is-error",isError);}
-}
-let apiReady=false,apiLoading=false,apiCallbacks=[];
-function ensureBookApi(cb){
- if(apiReady){cb(true);return;}
- apiCallbacks.push(cb);
- if(apiLoading)return;
- apiLoading=true;
- const check=()=>{
-  if(!window.google||!google.books||!google.books.load||!google.books.setOnLoadCallback){finish(false);return}
-  try{google.books.load();google.books.setOnLoadCallback(()=>finish(true));}catch(e){finish(false)}
- };
- const finish=ok=>{apiReady=ok;apiLoading=false;const pending=apiCallbacks.splice(0);pending.forEach(fn=>fn(ok));};
- if(window.google&&google.books){check();return;}
- let tries=0;
- const wait=setInterval(()=>{if(window.google&&google.books){clearInterval(wait);check();}else if(++tries>25){clearInterval(wait);finish(false)}},200);
-}
-function sourceFailure(id,message){
- const pane=document.getElementById("viewer-"+id),fallback=document.getElementById("fallback-"+id);
- if(pane)pane.hidden=true;
- if(fallback)fallback.hidden=false;
- setSourceStatus(id,message,true);
-}
-let observer=null;
-const active=new Set();
-function startEmbeds(){
- if(observer)observer.disconnect();
- active.clear();
- const items=[...document.querySelectorAll(".source-viewer")];
- if("IntersectionObserver" in window){
-  observer=new IntersectionObserver(entries=>{
-   for(const e of entries)if(e.isIntersecting){observer.unobserve(e.target);loadOriginal(e.target)}
-  },{rootMargin:"400px 0px"});
-  items.forEach(e=>observer.observe(e));
- }else items.forEach(loadOriginal);
-}
-function loadOriginal(el){
- if(!el||active.has(el.id))return;
- active.add(el.id);
- const id=el.id.slice(7),m=el.dataset.book.match(/[?&]id=([A-Za-z0-9_-]+)/);
- if(!m){sourceFailure(id,"The Google Books volume identifier is missing.");return;}
- const volumeId=m[1],page=Number(el.dataset.page);
- // A visible cover/reference and a working source link remain in place until the viewer succeeds.
- const timer=setTimeout(()=>sourceFailure(id,"Google has not supplied an embeddable article preview. Use the original page link above."),8500);
- ensureBookApi(ok=>{
-  if(!ok){clearTimeout(timer);sourceFailure(id,"Google Books preview API is unavailable. The original source link is available.");return;}
-  try{
-   const viewer=new google.books.DefaultViewer(el);
-   viewer.load(volumeId,
-    ()=>{clearTimeout(timer);sourceFailure(id,"Google does not permit this magazine preview to be embedded here.");},
-    ()=>{
-     clearTimeout(timer);
-     if(el.hidden)return;
-     const previewVisible=document.getElementById("fallback-"+id);
-     if(previewVisible)previewVisible.hidden=true;
-     el.classList.add("is-ready");
-     let switched=false;
-     try{switched=viewer.goToPage(String(page));}catch(e){}
-     setSourceStatus(id,switched?"Original scan displayed by Google Books, page "+page+".":"Google preview loaded, but requested page "+page+" is not accessible through the viewer.");
-    }
-   );
-  }catch(e){clearTimeout(timer);sourceFailure(id,"Google Books preview failed. The original source link is available.");}
- });
-}
 for(const id of ["q","decade","category"])document.getElementById(id).addEventListener(id==="q"?"input":"change",render);
 fetch("./projects.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Archive unavailable");return r.json()}).then(data=>{if(!Array.isArray(data))throw Error("Invalid catalog");catalog=data.filter(x=>x&&x.title&&x.issue&&x.url).sort((a,b)=>a.year-b.year||a.page-b.page);render()}).catch(()=>{document.getElementById("entries").innerHTML='<div class="empty">The archive could not be loaded. Please refresh or see the project catalog in the repository.</div>'});
 </script></body></html>

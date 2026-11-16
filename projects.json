@@ -9,14 +9,21 @@
     "url": "https://books.google.com/books?id=-tMDAAAAMBAJ&pg=PA140",
     "summary": "A woodworking and instrument-making project.",
     "improve": [
-      "Structural and functional risk review",
-      "Modern durable construction materials",
-      "CAD model and cut-list",
-      "Ergonomic and accessible controls",
-      "Replaceable standardized hardware"
+      "CAD fret placement and scale geometry",
+      "Stable neck reinforcement design",
+      "Precision fret-slot cutting templates",
+      "Adjustable and replaceable tuning hardware",
+      "Low-VOC compatible instrument finish"
     ],
     "sourceStatus": "Article title, issue and starting page confirmed in Google Books contents; original construction details not inspected.",
-    "reviewStatus": "source_index_verified_plan_pending"
+    "reviewStatus": "catalog_verified_original_plans_pending",
+    "originalPlan": {
+      "materials": null,
+      "dimensions": null,
+      "steps": null,
+      "drawings": "Read original issue scan; not independently reviewed"
+    },
+    "modernizationDisclaimer": "OpenAI suggestions are independent proposals, not instructions in the original magazine or validated designs."
   },
   {
     "id": "PM-1968-SEP-122",
@@ -28,14 +35,21 @@
     "url": "https://books.google.com/books?id=6dMDAAAAMBAJ&pg=PA122",
     "summary": "A home carpentry storage project.",
     "improve": [
-      "CAD-verified dimensions and clearances",
-      "Stable low-emission panel materials",
-      "Replaceable high-wear parts",
-      "CNC-ready cutting templates",
-      "Rounded edges and safer finishes"
+      "Anti-tip anchoring matched to wall framing",
+      "Low-emission plywood or sheet goods",
+      "Modular adjustable shelves",
+      "CNC cutting schedule to limit material waste",
+      "Ventilation and integrated low-voltage lighting"
     ],
     "sourceStatus": "Article title, issue and starting page confirmed in Google Books contents; original construction details not inspected.",
-    "reviewStatus": "source_index_verified_plan_pending"
+    "reviewStatus": "catalog_verified_original_plans_pending",
+    "originalPlan": {
+      "materials": null,
+      "dimensions": null,
+      "steps": null,
+      "drawings": "Read original issue scan; not independently reviewed"
+    },
+    "modernizationDisclaimer": "OpenAI suggestions are independent proposals, not instructions in the original magazine or validated designs."
   },
   {
     "id": "PM-1972-AUG-64",
@@ -47,14 +61,21 @@
     "url": "https://books.google.com/books?id=NNQDAAAAMBAJ&pg=PA64",
     "summary": "A small outdoor barn-style structure.",
     "improve": [
-      "Structural and functional risk review",
-      "Modern durable construction materials",
-      "CAD model and cut-list",
-      "Ergonomic and accessible controls",
-      "Replaceable standardized hardware"
+      "Local-code-compliant foundation and anchors",
+      "Engineered rafter and wall connections",
+      "Rain-screen and moisture detailing",
+      "Corrosion-resistant exterior fittings",
+      "Digital framing cut list"
     ],
     "sourceStatus": "Article title, issue and starting page confirmed in Google Books contents; original construction details not inspected.",
-    "reviewStatus": "source_index_verified_plan_pending"
+    "reviewStatus": "catalog_verified_original_plans_pending",
+    "originalPlan": {
+      "materials": null,
+      "dimensions": null,
+      "steps": null,
+      "drawings": "Read original issue scan; not independently reviewed"
+    },
+    "modernizationDisclaimer": "OpenAI suggestions are independent proposals, not instructions in the original magazine or validated designs."
   },
   {
     "id": "PM-1975-SEP-77",
@@ -66,14 +87,21 @@
     "url": "https://books.google.com/books?id=e-IDAAAAMBAJ&pg=PA77",
     "summary": "An ambitious air-cushion vehicle build.",
     "improve": [
-      "Enclosed moving components",
-      "Emergency-stop and fail-safe review",
-      "Modern corrosion-resistant materials",
-      "CAD motion and load simulation",
-      "Controlled testing and maintenance plan"
+      "Guarded fan and propulsion systems",
+      "Emergency shutdown and operator restraint evaluation",
+      "CAD-based stability and airflow review",
+      "Modern rated fasteners and structural materials",
+      "Restricted-area test protocol and independent safety review"
     ],
     "sourceStatus": "Article title, issue and starting page confirmed in Google Books contents; original construction details not inspected.",
-    "reviewStatus": "source_index_verified_plan_pending"
+    "reviewStatus": "catalog_verified_original_plans_pending",
+    "originalPlan": {
+      "materials": null,
+      "dimensions": null,
+      "steps": null,
+      "drawings": "Read original issue scan; not independently reviewed"
+    },
+    "modernizationDisclaimer": "OpenAI suggestions are independent proposals, not instructions in the original magazine or validated designs."
   },
   {
     "id": "PM-1978-FEB-31",
@@ -85,14 +113,21 @@
     "url": "https://books.google.com/books?id=vc8DAAAAMBAJ&pg=PA31",
     "summary": "A mechanical puzzle-making project.",
     "improve": [
-      "CAD-verified dimensions and clearances",
-      "Stable low-emission panel materials",
-      "Replaceable high-wear parts",
-      "CNC-ready cutting templates",
-      "Rounded edges and safer finishes"
+      "Precision laser/CNC cutting for repeatable pieces",
+      "Child-safe non-toxic finish review",
+      "Chamfered smooth contact edges",
+      "Modern assembly diagrams",
+      "Replaceable wear components where applicable"
     ],
     "sourceStatus": "Article title, issue and starting page confirmed in Google Books contents; original construction details not inspected.",
-    "reviewStatus": "source_index_verified_plan_pending"
+    "reviewStatus": "catalog_verified_original_plans_pending",
+    "originalPlan": {
+      "materials": null,
+      "dimensions": null,
+      "steps": null,
+      "drawings": "Read original issue scan; not independently reviewed"
+    },
+    "modernizationDisclaimer": "OpenAI suggestions are independent proposals, not instructions in the original magazine or validated designs."
   },
   {
     "id": "PM-1978-OCT-55",
@@ -104,14 +139,21 @@
     "url": "https://books.google.com/books?id=4M4DAAAAMBAJ&pg=PA55",
     "summary": "An ergonomic drill press lifting accessory.",
     "improve": [
-      "Guarding and pinch-point risk review",
-      "Positive locking and rated supports",
-      "Ergonomic tool positioning",
-      "CAD layout and fabrication checks",
-      "Dust control and serviceable components"
+      "Positive mechanical locking at working height",
+      "Rated lifting/drive hardware",
+      "Pinch-point shielding",
+      "Machine-specific interference envelope in CAD",
+      "Low-effort ergonomic control location"
     ],
     "sourceStatus": "Article title, issue and starting page confirmed in Google Books contents; original construction details not inspected.",
-    "reviewStatus": "source_index_verified_plan_pending"
+    "reviewStatus": "catalog_verified_original_plans_pending",
+    "originalPlan": {
+      "materials": null,
+      "dimensions": null,
+      "steps": null,
+      "drawings": "Read original issue scan; not independently reviewed"
+    },
+    "modernizationDisclaimer": "OpenAI suggestions are independent proposals, not instructions in the original magazine or validated designs."
   },
   {
     "id": "PM-1978-OCT-65",
@@ -123,14 +165,21 @@
     "url": "https://books.google.com/books?id=4M4DAAAAMBAJ&pg=PA65",
     "summary": "A reversible board-game furniture project.",
     "improve": [
-      "CAD-verified dimensions and clearances",
-      "Stable low-emission panel materials",
-      "Replaceable high-wear parts",
-      "CNC-ready cutting templates",
-      "Rounded edges and safer finishes"
+      "Positive locating pins for the rotating/reversible top",
+      "Stable engineered-wood substrate",
+      "CNC inlay or template-driven board geometry",
+      "Rounded child-friendly corners",
+      "Repairable finish and removable board panel"
     ],
     "sourceStatus": "Article title, issue and starting page confirmed in Google Books contents; original construction details not inspected.",
-    "reviewStatus": "source_index_verified_plan_pending"
+    "reviewStatus": "catalog_verified_original_plans_pending",
+    "originalPlan": {
+      "materials": null,
+      "dimensions": null,
+      "steps": null,
+      "drawings": "Read original issue scan; not independently reviewed"
+    },
+    "modernizationDisclaimer": "OpenAI suggestions are independent proposals, not instructions in the original magazine or validated designs."
   },
   {
     "id": "PM-1982-JAN-99",
@@ -142,14 +191,21 @@
     "url": "https://books.google.com/books?id=xNgDAAAAMBAJ&pg=PA99",
     "summary": "A woodworking joinery technique feature.",
     "improve": [
-      "CAD-verified dimensions and clearances",
-      "Stable low-emission panel materials",
-      "Replaceable high-wear parts",
-      "CNC-ready cutting templates",
-      "Rounded edges and safer finishes"
+      "Digital joint layout templates",
+      "Router or hand-tool fixture repeatability",
+      "Wood species movement allowances",
+      "Dust extraction for powered machining",
+      "Low-VOC glue and finish compatibility"
     ],
     "sourceStatus": "Article title, issue and starting page confirmed in Google Books contents; original construction details not inspected.",
-    "reviewStatus": "source_index_verified_plan_pending"
+    "reviewStatus": "catalog_verified_original_plans_pending",
+    "originalPlan": {
+      "materials": null,
+      "dimensions": null,
+      "steps": null,
+      "drawings": "Read original issue scan; not independently reviewed"
+    },
+    "modernizationDisclaimer": "OpenAI suggestions are independent proposals, not instructions in the original magazine or validated designs."
   },
   {
     "id": "PM-1982-AUG-90",
@@ -161,14 +217,21 @@
     "url": "https://books.google.com/books?id=VtkDAAAAMBAJ&pg=PA90",
     "summary": "A traditional cupboard-making project.",
     "improve": [
-      "CAD-verified dimensions and clearances",
-      "Stable low-emission panel materials",
-      "Replaceable high-wear parts",
-      "CNC-ready cutting templates",
-      "Rounded edges and safer finishes"
+      "Humidity-aware solid-wood panel joinery",
+      "Safe food-contact finish selection where relevant",
+      "Ventilation opening insect screening",
+      "CNC-guided decorative panel fabrication",
+      "Removable adjustable shelf standards"
     ],
     "sourceStatus": "Article title, issue and starting page confirmed in Google Books contents; original construction details not inspected.",
-    "reviewStatus": "source_index_verified_plan_pending"
+    "reviewStatus": "catalog_verified_original_plans_pending",
+    "originalPlan": {
+      "materials": null,
+      "dimensions": null,
+      "steps": null,
+      "drawings": "Read original issue scan; not independently reviewed"
+    },
+    "modernizationDisclaimer": "OpenAI suggestions are independent proposals, not instructions in the original magazine or validated designs."
   },
   {
     "id": "PM-1982-AUG-89",
@@ -180,14 +243,21 @@
     "url": "https://books.google.com/books?id=VtkDAAAAMBAJ&pg=PA89",
     "summary": "A workshop clamping accessory.",
     "improve": [
-      "Guarding and pinch-point risk review",
-      "Positive locking and rated supports",
-      "Ergonomic tool positioning",
-      "CAD layout and fabrication checks",
-      "Dust control and serviceable components"
+      "Interchangeable non-marring jaw inserts",
+      "Screw and frame load calculations",
+      "CAD-controlled jaw alignment",
+      "Positive retention under vibration",
+      "Replaceable threads and maintenance access"
     ],
     "sourceStatus": "Article title, issue and starting page confirmed in Google Books contents; original construction details not inspected.",
-    "reviewStatus": "source_index_verified_plan_pending"
+    "reviewStatus": "catalog_verified_original_plans_pending",
+    "originalPlan": {
+      "materials": null,
+      "dimensions": null,
+      "steps": null,
+      "drawings": "Read original issue scan; not independently reviewed"
+    },
+    "modernizationDisclaimer": "OpenAI suggestions are independent proposals, not instructions in the original magazine or validated designs."
   },
   {
     "id": "PM-1982-AUG-62",
@@ -199,14 +269,21 @@
     "url": "https://books.google.com/books?id=VtkDAAAAMBAJ&pg=PA62",
     "summary": "A wheeled wagon construction project.",
     "improve": [
-      "Structural and functional risk review",
-      "Modern durable construction materials",
-      "CAD model and cut-list",
-      "Ergonomic and accessible controls",
-      "Replaceable standardized hardware"
+      "Load-rated axle and wheel selections",
+      "Rounded handle geometry for ergonomic pulling",
+      "CAD frame deflection validation",
+      "Outdoor-compatible finishes",
+      "Replaceable wheel bearings and fasteners"
     ],
     "sourceStatus": "Article title, issue and starting page confirmed in Google Books contents; original construction details not inspected.",
-    "reviewStatus": "source_index_verified_plan_pending"
+    "reviewStatus": "catalog_verified_original_plans_pending",
+    "originalPlan": {
+      "materials": null,
+      "dimensions": null,
+      "steps": null,
+      "drawings": "Read original issue scan; not independently reviewed"
+    },
+    "modernizationDisclaimer": "OpenAI suggestions are independent proposals, not instructions in the original magazine or validated designs."
   },
   {
     "id": "PM-1982-NOV-104",
@@ -218,14 +295,21 @@
     "url": "https://books.google.com/books?id=49kDAAAAMBAJ&pg=PA104",
     "summary": "A comprehensive woodworking center.",
     "improve": [
-      "Guarding and pinch-point risk review",
-      "Positive locking and rated supports",
-      "Ergonomic tool positioning",
-      "CAD layout and fabrication checks",
-      "Dust control and serviceable components"
+      "Dust collection designed around tool outlets",
+      "Ergonomic workflow and aisle clearances",
+      "Rated machine-mount points",
+      "Accessible electrical routing compliant with code",
+      "Modular standardized storage bays"
     ],
     "sourceStatus": "Article title, issue and starting page confirmed in Google Books contents; original construction details not inspected.",
-    "reviewStatus": "source_index_verified_plan_pending"
+    "reviewStatus": "catalog_verified_original_plans_pending",
+    "originalPlan": {
+      "materials": null,
+      "dimensions": null,
+      "steps": null,
+      "drawings": "Read original issue scan; not independently reviewed"
+    },
+    "modernizationDisclaimer": "OpenAI suggestions are independent proposals, not instructions in the original magazine or validated designs."
   },
   {
     "id": "PM-1982-NOV-106",
@@ -237,14 +321,21 @@
     "url": "https://books.google.com/books?id=49kDAAAAMBAJ&pg=PA106",
     "summary": "A dedicated workbench for assembly.",
     "improve": [
-      "Guarding and pinch-point risk review",
-      "Positive locking and rated supports",
-      "Ergonomic tool positioning",
-      "CAD layout and fabrication checks",
-      "Dust control and serviceable components"
+      "Replaceable dead-flat sacrificial worktop",
+      "Distributed clamping holes and rails",
+      "Load-rated torsion-resistant frame",
+      "Adjustable working-height option",
+      "Rolling vs stationary stability review"
     ],
     "sourceStatus": "Article title, issue and starting page confirmed in Google Books contents; original construction details not inspected.",
-    "reviewStatus": "source_index_verified_plan_pending"
+    "reviewStatus": "catalog_verified_original_plans_pending",
+    "originalPlan": {
+      "materials": null,
+      "dimensions": null,
+      "steps": null,
+      "drawings": "Read original issue scan; not independently reviewed"
+    },
+    "modernizationDisclaimer": "OpenAI suggestions are independent proposals, not instructions in the original magazine or validated designs."
   },
   {
     "id": "PM-1982-NOV-109",
@@ -256,13 +347,20 @@
     "url": "https://books.google.com/books?id=49kDAAAAMBAJ&pg=PA109",
     "summary": "A movable tool workstation.",
     "improve": [
-      "Guarding and pinch-point risk review",
-      "Positive locking and rated supports",
-      "Ergonomic tool positioning",
-      "CAD layout and fabrication checks",
-      "Dust control and serviceable components"
+      "Lockable casters rated for loaded center",
+      "Low center-of-gravity tool layout",
+      "Cable management and protected charging bays",
+      "Dust-protected compartments",
+      "Replaceable storage modules"
     ],
     "sourceStatus": "Article title, issue and starting page confirmed in Google Books contents; original construction details not inspected.",
-    "reviewStatus": "source_index_verified_plan_pending"
+    "reviewStatus": "catalog_verified_original_plans_pending",
+    "originalPlan": {
+      "materials": null,
+      "dimensions": null,
+      "steps": null,
+      "drawings": "Read original issue scan; not independently reviewed"
+    },
+    "modernizationDisclaimer": "OpenAI suggestions are independent proposals, not instructions in the original magazine or validated designs."
   }
 ]

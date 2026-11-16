@@ -50,6 +50,7 @@ button,input,select{font:inherit}button{cursor:pointer}a{color:var(--olive)}
 @media(prefers-reduced-motion:no-preference){.clipping{transition:transform .2s}.clipping:hover{transform:rotate(0deg) translateY(-2px)}}
 
 /* Original magazine preview, provided by Google Books rather than copied into this repository. */
+.source-fallback{padding:15px 12px;text-align:center;border:1px dashed #b8a27e;background:#faf1dd;margin:9px 0;font:12px/1.6 Georgia,serif}.source-fallback img{max-height:180px;max-width:100%;object-fit:contain;display:block;margin:0 auto 12px;filter:sepia(.25)}.source-fallback a{display:inline-block;margin-top:8px;background:#5b6349;color:#fff6e5;padding:10px 12px;text-decoration:none;font:12px "Courier New",monospace}.source-viewer[hidden]{display:none}
 .original-preview{border:1px solid #ab9471;background:#e7dcc6;padding:10px;margin:17px 0 10px;box-shadow:2px 4px 8px #38281826;transform:rotate(.5deg)}
 .original-preview h5{font:700 11px 'Courier New',monospace;text-transform:uppercase;letter-spacing:.09em;margin:3px 0 9px;color:#644f36}
 .source-viewer{height:390px;width:100%;min-width:0;background:#eee6d8;border:1px solid #bcab89;overflow:hidden}
@@ -89,7 +90,7 @@ function render(){
  if(last!==String(decade)){last=String(decade);const label=decade===1960?"Volume I":decade===1970?"Volume II":"Volume III";out+='<div class="volume-title">'+label+' <span>· The '+(decade===1960?"late ":"")+decade+'s</span></div>';}
  const title=esc(p.title),issue=esc(p.issue),summary=esc(p.summary),category=esc(p.category),pg=esc(p.page),link=(typeof p.url==="string"&&/^https:\/\/books\.google\.com\/books\?id=[A-Za-z0-9_-]+&pg=PA\d+$/.test(p.url))?p.url:"#";
  const suggestions=Array.isArray(p.improve)?p.improve:[];
- out+='<article class="spread" aria-label="'+title+'"><div class="leftpage"><div class="clipping"><div class="mag">POPULAR MECHANICS</div><div class="folio">'+issue.toUpperCase()+' · ORIGINAL ARTICLE INDEX · P. '+pg+'</div><h3>'+title+'</h3><div class="sketch">'+illus(category)+'</div><div class="original-preview"><h5>Original magazine · Google Books official preview</h5><div class="source-viewer" id="viewer-'+esc(p.id)+'" data-book="'+esc(p.url)+'" data-page="'+pg+'" role="region" aria-label="Magazine preview for '+title+'"></div><p class="source-status" id="status-'+esc(p.id)+'">Loading Google Books preview where available…</p><div class="source-caption">Magazine pages are served directly by Google Books, subject to its preview rights and availability. Not stored or copied by this website.</div></div><p class="article-summary">'+summary+'</p><div class="archive-mark">EDITORIAL RECREATION · NOT THE ORIGINAL MAGAZINE SCAN</div></div><p class="legal">Source: '+issue+', starting p. '+pg+'. Actual drawings and full original construction instructions require inspection.</p><a class="orig-link" href="'+link+'" target="_blank" rel="noopener noreferrer">See original magazine page ↗</a></div><div class="rightpage"><div class="paper-label">Filed in '+category+' · '+esc(p.id)+'</div><div class="pencil">An idea worth saving.</div><h4>What made this worth clipping?</h4><p>'+summary+'</p><div class="notes"><strong>Modern engineering notes · OpenAI analysis</strong><ol>'+suggestions.map(v=>'<li>'+esc(v)+'</li>').join("")+'</ol></div><div class="stamp">Original plans need review</div><p class="legal">Proposals are conceptual, independently generated, and not original Popular Mechanics instructions. Any build requires engineering checks and appropriate modern machine, electrical and dust safety measures.</p></div></article>';
+ out+='<article class="spread" aria-label="'+title+'"><div class="leftpage"><div class="clipping"><div class="mag">POPULAR MECHANICS</div><div class="folio">'+issue.toUpperCase()+' · ORIGINAL ARTICLE INDEX · P. '+pg+'</div><h3>'+title+'</h3><div class="sketch">'+illus(category)+'</div><div class="original-preview"><h5>Original magazine · Google Books official preview</h5><div class="source-viewer" id="viewer-'+esc(p.id)+'" data-book="'+esc(p.url)+'" data-page="'+pg+'" role="region" aria-label="Magazine preview for '+title+'"></div><div class="source-fallback" id="fallback-'+esc(p.id)+'"><img loading="lazy" alt="Cover thumbnail of the referenced Popular Mechanics issue; not the original article page" src="https://books.google.com/books/content?id='+encodeURIComponent((new URL(link)).searchParams.get("id")||"")+'&printsec=frontcover&img=1&zoom=1" onerror="this.style.display=\'none\'"><div><strong>Original article scan is not yet available inline.</strong><br>This is an issue-cover reference, not the project page.</div><a href="'+link+'" target="_blank" rel="noopener noreferrer">Read actual article at Google Books ↗</a></div><p class="source-status" id="status-'+esc(p.id)+'">Checking whether Google permits an inline page preview…</p><div class="source-caption">Magazine pages are served directly by Google Books, subject to its preview rights and availability. Not stored or copied by this website.</div></div><p class="article-summary">'+summary+'</p><div class="archive-mark">EDITORIAL RECREATION · NOT THE ORIGINAL MAGAZINE SCAN</div></div><p class="legal">Source: '+issue+', starting p. '+pg+'. Actual drawings and full original construction instructions require inspection.</p><a class="orig-link" href="'+link+'" target="_blank" rel="noopener noreferrer">See original magazine page ↗</a></div><div class="rightpage"><div class="paper-label">Filed in '+category+' · '+esc(p.id)+'</div><div class="pencil">An idea worth saving.</div><h4>What made this worth clipping?</h4><p>'+summary+'</p><div class="notes"><strong>Modern engineering notes · OpenAI analysis</strong><ol>'+suggestions.map(v=>'<li>'+esc(v)+'</li>').join("")+'</ol></div><div class="stamp">Original plans need review</div><p class="legal">Proposals are conceptual, independently generated, and not original Popular Mechanics instructions. Any build requires engineering checks and appropriate modern machine, electrical and dust safety measures.</p></div></article>';
  }
  container.innerHTML=out;
  startEmbeds();
@@ -101,49 +102,67 @@ function setSourceStatus(id,message,isError=false){
  const status=document.getElementById("status-"+id);
  if(status){status.textContent=message;status.classList.toggle("is-error",isError);}
 }
-function startEmbeds(){
- if(embedObserver){embedObserver.disconnect();embedObserver=null;}
- startedEmbeds.clear();
- const elements=[...document.querySelectorAll(".source-viewer")];
- if(!elements.length)return;
- // Lazy-load originals as visitors turn the pages. Never scrape, screenshot, or bypass Google restrictions.
- if("IntersectionObserver" in window){
-  embedObserver=new IntersectionObserver(entries=>{
-   for(const entry of entries)if(entry.isIntersecting){loadOriginal(entry.target);embedObserver.unobserve(entry.target);}
-  },{rootMargin:"650px 0px"});
-  elements.forEach(el=>embedObserver.observe(el));
- }else elements.forEach(loadOriginal);
+let apiReady=false,apiLoading=false,apiCallbacks=[];
+function ensureBookApi(cb){
+ if(apiReady){cb(true);return;}
+ apiCallbacks.push(cb);
+ if(apiLoading)return;
+ apiLoading=true;
+ const check=()=>{
+  if(!window.google||!google.books||!google.books.load||!google.books.setOnLoadCallback){finish(false);return}
+  try{google.books.load();google.books.setOnLoadCallback(()=>finish(true));}catch(e){finish(false)}
+ };
+ const finish=ok=>{apiReady=ok;apiLoading=false;const pending=apiCallbacks.splice(0);pending.forEach(fn=>fn(ok));};
+ if(window.google&&google.books){check();return;}
+ let tries=0;
+ const wait=setInterval(()=>{if(window.google&&google.books){clearInterval(wait);check();}else if(++tries>25){clearInterval(wait);finish(false)}},200);
 }
-function ensureBookApi(callback,attempt=0){
- if(window.google&&google.books&&google.books.DefaultViewer){
-  if(!bookApiReady){try{google.books.load();bookApiReady=true;}catch(e){callback(false);return;}}
-  google.books.setOnLoadCallback(()=>callback(true));return;
- }
- if(attempt>=25){callback(false);return;}
- setTimeout(()=>ensureBookApi(callback,attempt+1),200);
+function sourceFailure(id,message){
+ const pane=document.getElementById("viewer-"+id),fallback=document.getElementById("fallback-"+id);
+ if(pane)pane.hidden=true;
+ if(fallback)fallback.hidden=false;
+ setSourceStatus(id,message,true);
+}
+let observer=null;
+const active=new Set();
+function startEmbeds(){
+ if(observer)observer.disconnect();
+ active.clear();
+ const items=[...document.querySelectorAll(".source-viewer")];
+ if("IntersectionObserver" in window){
+  observer=new IntersectionObserver(entries=>{
+   for(const e of entries)if(e.isIntersecting){observer.unobserve(e.target);loadOriginal(e.target)}
+  },{rootMargin:"400px 0px"});
+  items.forEach(e=>observer.observe(e));
+ }else items.forEach(loadOriginal);
 }
 function loadOriginal(el){
- if(!el||startedEmbeds.has(el.id))return;
- startedEmbeds.add(el.id);
- const id=el.id.slice(7),source=el.dataset.book,requestedPage=Number(el.dataset.page);
- if(!/^https:\/\/books\.google\.com\/books\?id=[A-Za-z0-9_-]+&pg=PA\d+$/.test(source)){
-   setSourceStatus(id,"No verified Google Books preview address supplied.",true);return;
- }
- ensureBookApi(ready=>{
-  if(!ready){setSourceStatus(id,"Google Books viewer unavailable here; use the original source link below.",true);return;}
+ if(!el||active.has(el.id))return;
+ active.add(el.id);
+ const id=el.id.slice(7),m=el.dataset.book.match(/[?&]id=([A-Za-z0-9_-]+)/);
+ if(!m){sourceFailure(id,"The Google Books volume identifier is missing.");return;}
+ const volumeId=m[1],page=Number(el.dataset.page);
+ // A visible cover/reference and a working source link remain in place until the viewer succeeds.
+ const timer=setTimeout(()=>sourceFailure(id,"Google has not supplied an embeddable article preview. Use the original page link above."),8500);
+ ensureBookApi(ok=>{
+  if(!ok){clearTimeout(timer);sourceFailure(id,"Google Books preview API is unavailable. The original source link is available.");return;}
   try{
    const viewer=new google.books.DefaultViewer(el);
-   viewer.load(source,
-    ()=>setSourceStatus(id,"Google Books does not allow an embedded preview of this issue here. The source citation remains below.",true),
+   viewer.load(volumeId,
+    ()=>{clearTimeout(timer);sourceFailure(id,"Google does not permit this magazine preview to be embedded here.");},
     ()=>{
-     let correctPage=false;
-     if(Number.isInteger(requestedPage))try{correctPage=!!viewer.goToPage(requestedPage)}catch(e){}
-     setSourceStatus(id,correctPage?"Original magazine page displayed through Google Books.":"Google Books preview loaded. Page "+requestedPage+" may be restricted or unavailable; use the citation below.");
-    });
-  }catch(err){setSourceStatus(id,"Google Books could not load this preview. Source citation remains available.",true);}
+     clearTimeout(timer);
+     if(el.hidden)return;
+     const previewVisible=document.getElementById("fallback-"+id);
+     if(previewVisible)previewVisible.hidden=true;
+     let switched=false;
+     try{switched=viewer.goToPage(String(page));}catch(e){}
+     setSourceStatus(id,switched?"Original scan displayed by Google Books, page "+page+".":"Google preview loaded, but requested page "+page+" is not accessible through the viewer.");
+    }
+   );
+  }catch(e){clearTimeout(timer);sourceFailure(id,"Google Books preview failed. The original source link is available.");}
  });
 }
-
 for(const id of ["q","decade","category"])document.getElementById(id).addEventListener(id==="q"?"input":"change",render);
 fetch("./projects.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Archive unavailable");return r.json()}).then(data=>{if(!Array.isArray(data))throw Error("Invalid catalog");catalog=data.filter(x=>x&&x.title&&x.issue&&x.url).sort((a,b)=>a.year-b.year||a.page-b.page);render()}).catch(()=>{document.getElementById("entries").innerHTML='<div class="empty">The archive could not be loaded. Please refresh or see the project catalog in the repository.</div>'});
 </script></body></html>

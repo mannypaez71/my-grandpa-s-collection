@@ -446,5 +446,113 @@
       "basis": "",
       "attribution": ""
     }
+  },
+  {
+    "id": "PM-1979-MAR-126",
+    "title": "Build this workbench drafting table for under $50",
+    "year": 1979,
+    "issue": "March 1979",
+    "category": "Transforming furniture",
+    "page": 126,
+    "url": "https://books.google.com/books?id=cc8DAAAAMBAJ&pg=PA126",
+    "summary": "A dual-purpose workbench and drafting table, listed in the March 1979 Popular Mechanics contents. The title indicates a low-cost convertible workspace; the actual mechanism, bill of materials, construction sequence and historical price basis have not been independently inspected.",
+    "improve": [
+      "Engineer a positive-locking tilt mechanism with mechanical stops and a secondary retaining pin, so the drafting surface cannot drop unexpectedly.",
+      "Set working height using an adjustable support range determined from the intended user's seated and standing elbow heights; reduces sustained shoulder and wrist strain.",
+      "Use stable, low-emission plywood with sealed edges and a replaceable hardboard or drafting-mat wear surface; improves flatness and serviceability.",
+      "Create a parametric CAD cut list and CNC/router drilling template for pivot locations, then test full-range interference before cutting; reduces fit-up errors and rework.",
+      "Add restrained cable routing, a removable pencil tray and anti-slip feet; prevents snagging, improves access and limits unintended movement."
+    ],
+    "sourceStatus": "Original title, issue and starting page verified against the Google Books magazine contents; article scan, author, dimensions, original construction details and full page range not yet reviewed.",
+    "reviewStatus": "catalog_verified_original_plans_pending",
+    "originalPlan": {
+      "materials": null,
+      "tools": null,
+      "dimensions": null,
+      "steps": null,
+      "author": null,
+      "pagesVerified": [
+        126
+      ],
+      "drawings": "Original illustrations, if present, can be viewed at the linked Google Books source; not copied.",
+      "difficulty": "Intermediate (modern redesign assessment, not original rating)",
+      "duration": "Not estimated without verified dimensions or build details",
+      "cost": "Not estimated; 'under $50' is the historical article title, not a verified current budget."
+    },
+    "suggestedImprovements": [
+      "Engineer a positive-locking tilt mechanism with mechanical stops and a secondary retaining pin, so the drafting surface cannot drop unexpectedly.",
+      "Set working height using an adjustable support range determined from the intended user's seated and standing elbow heights; reduces sustained shoulder and wrist strain.",
+      "Use stable, low-emission plywood with sealed edges and a replaceable hardboard or drafting-mat wear surface; improves flatness and serviceability.",
+      "Create a parametric CAD cut list and CNC/router drilling template for pivot locations, then test full-range interference before cutting; reduces fit-up errors and rework.",
+      "Add restrained cable routing, a removable pencil tray and anti-slip feet; prevents snagging, improves access and limits unintended movement."
+    ],
+    "updatedMaterialsAndTools": {
+      "materials": [
+        "Cabinet-grade plywood (thickness to be sized by load analysis)",
+        "Replaceable hardboard or drafting surface",
+        "Rated hinges/pivots and positive-lock hardware",
+        "Wood screws and inserts",
+        "Low-VOC finish",
+        "Non-slip feet"
+      ],
+      "tools": [
+        "CAD or drawing software",
+        "Tape measure, square and marking tools",
+        "Circular saw with guide or table saw with guards",
+        "Drill/driver and bits",
+        "Clamps",
+        "Sander with dust extraction"
+      ]
+    },
+    "cadConsiderations": [
+      "Parametric tabletop envelope and angle range",
+      "Pivot center, locking geometry and swept-clearance analysis",
+      "Tip-over stability and load cases",
+      "Ergonomic height adjustment and access clearance",
+      "Cut list and assembly tolerances"
+    ],
+    "safety": [
+      "Provide positive mechanical locking before use at an incline",
+      "Check stability, pinch points and maximum supported loads",
+      "Use blade guards, eye/hearing protection and dust extraction",
+      "Follow finish ventilation and curing instructions",
+      "If electrified, comply with applicable wiring rules and use listed components"
+    ],
+    "tags": [
+      "1979",
+      "workbench",
+      "drafting-table",
+      "convertible-furniture",
+      "woodworking",
+      "small-shop"
+    ],
+    "sources": [
+      {
+        "type": "publisher_catalog",
+        "url": "https://books.google.com/books?id=cc8DAAAAMBAJ",
+        "verified": [
+          "title",
+          "issue",
+          "starting page"
+        ]
+      },
+      {
+        "type": "article_page",
+        "url": "https://books.google.com/books?id=cc8DAAAAMBAJ&pg=PA126",
+        "verified": [
+          "page locator"
+        ],
+        "scanReviewed": false
+      }
+    ],
+    "date": "2026-11-17",
+    "modernizationDisclaimer": "OpenAI modernization proposals are independent engineering analysis, not original Popular Mechanics guidance or a validated build plan.",
+    "memorial": "For Julio Paez, who knew a clever idea was worth keeping.",
+    "sourceImages": [],
+    "imageRights": {
+      "status": "pending",
+      "basis": "",
+      "attribution": ""
+    }
   }
 ]
